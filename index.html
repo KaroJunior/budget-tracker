@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KJ Budget Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>KJ Budget Tracker</h1>
+    <div id="top-row">
+      <div id="balance">
+        <h2>Total Balance: <span id="total-balance">$0</span></h2>
+      </div>
+      <div id="currency-container">
+        <select id="currency">
+          <option value="USD">$ USD</option>
+          <option value="EUR">€ EUR</option>
+          <option value="GBP">£ GBP</option>
+          <option value="NGN">₦ NGN</option>
+          <option value="INR">₹ INR</option>
+          <option value="JPY">¥ JPY</option>
+          <option value="KRW">₩ KRW</option>
+          <option value="BRL">R$ BRL</option>
+          <option value="TRY">₺ TRY</option>
+          <option value="ILS">₪ ILS</option>
+          <option value="VND">₫ VND</option>
+          <option value="PHP">₱ PHP</option>
+          <option value="THB">฿ THB</option>
+          <option value="UAH">₴ UAH</option>
+          <option value="CRC">₡ CRC</option>
+          <option value="AED">د.إ AED</option>
+          <option value="PLN">zł PLN</option>
+          <option value="CHF">CHF CHF</option>
+          <option value="CAD">CAD $</option>
+          <option value="AUD">AUD $</option>
+        </select>
+      </div>
+      <button id="clear-data">Clear All</button>
+    </div>
+
+    <!-- Transaction form -->
+    <form id="transaction-form">
+      <input type="text" id="description" placeholder="Description" required />
+      <input type="number" id="amount" placeholder="Amount" required />
+      <input type="text" id="category" placeholder="Category (e.g., Food, Rent)" required />
+      <div class="transaction-type">
+        <label>
+          <input type="radio" name="type" value="income" checked /> Income
+        </label>
+        <label>
+          <input type="radio" name="type" value="expense" /> Expense
+        </label>
+      </div>
+      <button type="submit">Add Transaction</button>
+    </form> 
+
+    <!-- History list -->
+    <h3>History</h3>
+    <div class="main-content">
+      <ul id="transaction-list"></ul>
+      <div id="charts">
+        <canvas id="expense-chart" width="400" height="250"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chart.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
